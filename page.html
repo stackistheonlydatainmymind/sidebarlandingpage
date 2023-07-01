@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+    }
+    /* Left Panel Styles */
+    .left-panel {
+      width: 20%;
+      background-color: #58e235;
+      color: #000000;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+    .left-panel ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .left-panel li {
+        padding-top: 50px;
+      padding-bottom: 50px;
+      padding-left: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .left-panel li:hover {
+      background-color: #feffff;
+    }
+    /* Right Panel Styles */
+    .right-panel {
+      margin-left: 20%;
+      padding: 20px;
+    }
+    .right-panel h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .right-panel p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <ul>
+        <li onclick="showContent('home')">Home</li>
+        <li onclick="showContent('contact')">Contact</li>
+        <li onclick="showContent('information')">About us</li>
+        <li onclick="showContent('guide')">Guide Now</li>
+      </ul>
+    </div>
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <h1>Welcome to Our Website!</h1>
+      <p id="home">This is the home section. Feel free to explore our site and learn more about us.</p>
+      <p id="contact">For any inquiries or feedback, please contact us using the information provided below.
+      <h4>email: "shyam_25@jobfreak.in"</h4></p>
+      
+      <p id="information"> About Us
+        At Job Freak We Post daily updates on internships and jobs postings ! !
+        Our aim is to empower the youth of our country and make them Self-dependent. By providing them job/internships all kinds of opportunities from various sectors, sharing knowledge and make them competent enough so that they could excel in any field. If you have any query regrading Site, Advertisement and any other issue, please feel free to
+        contact at our email shyam_25@jobfreak.in</p>
+      
+      <p id="guide">Ready to start your journey? Use our guide now to get all the necessary information.</p>
+    </div>
+  </div>
+
+  <script>
+    function showContent(section) {
+      // Hide all content paragraphs
+      const paragraphs = document.querySelectorAll('.right-panel p');
+      paragraphs.forEach(paragraph => {
+        paragraph.style.display = 'none';
+      });
+      
+      // Show the selected section
+      const selectedSection = document.getElementById(section);
+      selectedSection.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
+
